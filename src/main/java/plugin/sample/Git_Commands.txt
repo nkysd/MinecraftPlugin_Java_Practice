@@ -1,0 +1,17 @@
+mkdir  githubdemo で  作業ディレクトリ配下に github-demo というディレクトリを作成
+cd github-demo で  github-demo ディレクトリに移動
+ls コマンドで github-demo ディレクトリにファイルやディレクトリが存在しないことを確認
+git init コマンドでローカルリポジトリの作成
+echo  README > README.md で README.mdファイルを新規作成し、ファイルへREADMEと追記
+git add . で変更内容をステージング環境へ追加
+git status で更新状況を確認
+git commit -m  "first commit" で変更内容をコミットして、ローカルリポジトリに記録
+
+git checkout -b test でテストブランチを作成し、testブランチへ移動
+touch test.txt で test.txtファイルを新規作成
+git add .  で変更内容をステージング環境へ追加
+git commit -m "test.txtを作成"  で変更内容をコミット
+git push origin test  でtestブランチへ変更内容をプッシュ
+git switch main でmainブランチへ移動
+git merge test  でtestブランチをmainブランチへマージ
+ls  でtestブランチで作成した test.txt がmainブランチへも作成されていることを確認

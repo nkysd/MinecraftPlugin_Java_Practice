@@ -1,0 +1,99 @@
+※IntelliJではテンキーはショートカットに利用できないため、必ず数字キーを使う
+
+選択行を上下移動
+Mac：Option + Shift + ↑ or ↓
+Windows：  Alt + Shift + ↑ or ↓
+
+現在行の削除
+Mac：Command + Delete
+Windows：Shift + Delete
+
+Rename
+Mac：Shift + F6
+Windows： Shift + F6
+ドキュメント：名前の変更リファクタリング（https://pleiades.io/help/idea/rename-refactorings.html）
+
+マルチカーソル
+Mac：（文字列を選択してから） Ctrl + G
+Windows：（文字列を選択してから）  Alt + J
+
+マウスを使ったマルチカーソル
+Mac：Option を押しながらマウス移動
+Windows：Alt を押しながらマウス移動
+
+プロジェクトツールウインドウの表示/非表示
+Mac：Command + 1
+Windows： Alt + 1
+ドキュメント：プロジェクトツールウインドウ（https://pleiades.io/help/idea/project-tool-window.html）
+
+ファイル横断テキスト検索
+Mac：Command + Shift +F
+Windows：  Ctrl + Shift + F
+
+コピー履歴から貼り付け
+Mac：Command + Shift + V
+Windows： Ctrl + Shift + V
+
+クイックフィックス
+Mac：Option + Enter
+Windows： Alt + Enter
+ドキュメント：インテンションアクションを適用する（https://pleiades.io/help/idea/intention-actions.html#apply-intention-actions）
+
+コードフォーマット
+Mac：Command + Option + L
+Windows：  Ctrl + Alt + L
+ドキュメント：コードの整形（https://pleiades.io/help/idea/reformat-and-rearrange-code.html）
+
+変数の抽出
+Mac：Command + Option + V
+Windows： Ctrl + Alt + V
+ドキュメント：変数の抽出/導入（https://pleiades.io/help/idea/extract-variable.html）
+
+宣言のジャンプ
+Mac：Command + B
+Windows：  Ctrl + B
+ドキュメント：宣言とその型へ移動（https://pleiades.io/help/idea/navigating-through-the-source-code.html#go_to_declaration）
+
+実装クラスへジャンプ
+Mac：Command + Option + B
+Windows：  Ctrl + Alt + B
+ドキュメント：実装に移動（https://pleiades.io/help/idea/navigating-through-the-source-code.html#go_to_implementation）
+
+選択箇所をインラインを展開する
+Mac：Command + Option + N
+Windows：  Ctrl + Alt + N
+ドキュメント：インライン化（https://pleiades.io/help/idea/inline.html）
+
+変数を使われている箇所へジャンプ
+Mac：Command + Option + F7
+Windows： Ctrl + Alt + F7
+
+メソッドに切り出す
+Mac：Command + Option + M
+Windows：  Ctrl + Alt + M
+ドキュメント：メソッドの抽出（https://pleiades.io/help/idea/extract-method.html）
+
+フィールドとして宣言に切り出す
+Mac：Command + Option + F
+Windows：  Ctrl + Alt + F
+
+型の継承階層を表示する
+Mac：Ctrl + H
+Windows：Ctrl + H
+ドキュメント：ソースコード階層（https://pleiades.io/help/idea/viewing-structure-and-hierarchy-of-the-source-code.html#ws_build_hierarchy）
+
+呼び出し先を調べる
+Mac：Option + Ctrl + H
+Windows：  Alt + Ctrl + H
+ドキュメント：呼び出し階層を構築する（https://pleiades.io/help/idea/viewing-structure-and-hierarchy-of-the-source-code.html#call）
+
+シグネチャーの変更
+Mac：Command + F6
+Windows： Ctrl + F6
+ドキュメント：シグネチャーの変更（https://pleiades.io/help/idea/change-signature.html）
+
+テストクラスと実装クラスの相互ジャンプ　
+Mac：Command + Shift + T
+Windows： Ctrl + Shift + T
+ドキュメント：テストと本番間コードを移動する（https://pleiades.io/help/idea/create-tests.html#test-code-navigation）
+

@@ -1,0 +1,136 @@
+package plugin.sample;
+
+import java.math.BigInteger;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import org.bukkit.Bukkit;
+import org.bukkit.Color;
+import org.bukkit.FireworkEffect;
+import org.bukkit.FireworkEffect.Type;
+import org.bukkit.World;
+import org.bukkit.entity.Firework;
+import org.bukkit.entity.Player;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.Listener;
+import org.bukkit.event.player.PlayerToggleSneakEvent;
+import org.bukkit.inventory.meta.FireworkMeta;
+import org.bukkit.plugin.java.JavaPlugin;
+import org.checkerframework.checker.units.qual.A;
+
+public final class OldMain extends JavaPlugin implements Listener {
+
+  // プレーヤーがスニークした回数をカウントするための変数
+  private int count;
+
+  // BigInteger型のvalを定義(初期値:1)
+  // BigInteger val = new BigInteger("1");
+
+  @Override
+  public void onEnable() {
+    Bukkit.getPluginManager().registerEvents(this, this);
+
+    /**
+     // 配列
+     String[] stringArray = new String[]{"test1", "test2", "test3"};
+
+     // リスト
+     // 空のArrayList
+     // List<String> stringList = new ArrayList<>();
+
+     // 中身を最初から入れるリスト
+     List<String> stringList = List.of("test1", "test2", "test3");
+     stringList.add("test4"); // 簡単に追加できる
+     stringList.remove(0); // index(要素)を削除
+
+     // マップ (keyとindexの組み合わせ)
+     Map<Integer, String> map = new HashMap<>();
+     map.put(1, "test1");
+     map.put(2, "test2");
+     String value = map.get(1); // keyで取り出せる
+
+     Map<Integer, List<String>> map2 = new HashMap<>();
+     map2.put(3, List.of());
+
+     // ifとswitch
+     int number = 10;
+
+     // if
+     if (number >= 10) {
+     System.out.println("A");
+     } else if (number >= 5) {
+     System.out.println("B");
+     } else {
+     System.out.println("C");
+     }
+
+     // switch
+     switch (number) {
+     case 1 -> System.out.println("A");
+     case 2 -> System.out.println("B");
+     case 10 -> System.out.println("C");
+     default -> System.out.println("D");
+     }
+
+     **/
+  }
+
+  /**
+   * プレイヤーがスニークを開始/終了する際に起動されるイベントハンドラ。
+   *
+   * @param e イベント
+   */
+  @EventHandler
+  public void onPlayerToggleSneak(PlayerToggleSneakEvent e) {
+    // イベント発生時のプレイヤーやワールドなどの情報を変数に持つ。
+    Player player = e.getPlayer();
+    World world = player.getWorld();
+
+    // 花火のカラーリスト
+    List<Color> colorList = List.of(Color.RED, Color.BLUE, Color.WHITE, Color.BLACK);
+
+    // プレーヤーがスニークしてる時だけ(スニーク回数が偶数の時(割る2して余りが0のとき))
+    if (count % 2 == 0) {
+      // for文の基本
+      // for (int i = 0; i < 4; i++) {
+      // カラーリストをfor文で回す
+      for (Color color : colorList) {
+
+        // valが素数なら花火打ち上げ
+        // if (val.isProbablePrime(1)){
+        // 素数であることをコンソールに出力
+        // System.out.println(val + " は素数で　す");
+
+        // 花火オブジェクトをプレイヤーのロケーション地点に対して出現させる。
+        Firework firework = world.spawn(player.getLocation(), Firework.class);
+
+        // 花火オブジェクトが持つメタ情報を取得。
+        FireworkMeta fireworkMeta = firework.getFireworkMeta();
+
+        // メタ情報に対して設定を追加したり、値の上書きを行う。
+        // 今回は青色で星型の花火を打ち上げる。 -> カラーリストを使う
+        fireworkMeta.addEffect(
+            FireworkEffect.builder()
+                // .withColor(Color.BLUE)
+                .withColor(color)
+                .with(Type.STAR)
+                .withFlicker()
+                .build());
+        fireworkMeta.setPower(0);
+
+        // 追加した情報で再設定する。
+        firework.setFireworkMeta(fireworkMeta);
+      }
+    }
+    // ifの分岐がどうだろうと、処理が終わったらcountに+1する
+    count++;
+
+    // valに+1する
+    // val = val.add(BigInteger.ONE);
+
+    // BigInteger型のvalに対してnextProbablePrimeメソッドを使用
+    // System.out.println(val.nextProbablePrime()); // 1より大きい素数の2が出力される
+
+  }
+}
