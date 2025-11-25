@@ -12,6 +12,7 @@ import org.bukkit.entity.Firework;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerToggleSneakEvent;
 import org.bukkit.inventory.meta.FireworkMeta;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -24,6 +25,16 @@ public final class Main extends JavaPlugin implements Listener {
     Bukkit.getPluginManager().registerEvents(this, this);
 
 
+  }
+
+  /**
+  * プレイヤーがサーバーにJoinした時にメッセージを表示
+  */
+
+  @EventHandler
+  public void onPlayerJoin(PlayerJoinEvent e){
+    Player player = e.getPlayer();
+    player.sendMessage("Welcome back!");
   }
 
   /**
@@ -58,13 +69,6 @@ public final class Main extends JavaPlugin implements Listener {
 
       // 追加した情報で再設定する。
       firework.setFireworkMeta(fireworkMeta);
-
-      // 入出力処理
-      // テキストファイルを開いて(なければ作成して)、文字列を書き込む(毎回上書きされる)
-      Path path = Path.of("firwork.txt");
-      Files.writeString(path, "たーまやー");
-      //文字列を読み込んで、メッセージとして送る
-      player.sendMessage(Files.readString(path));
     }
     count++;
   }
