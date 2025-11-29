@@ -23,7 +23,7 @@ public final class Main extends JavaPlugin implements Listener {
   @Override
   public void onEnable() {
     Bukkit.getPluginManager().registerEvents(this, this);
-
+    getCommand("levelup").setExecutor(new LevelUpCommand());
 
   }
 
