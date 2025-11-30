@@ -12,7 +12,11 @@ public class LevelUpCommand implements CommandExecutor {
   public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command,
       @NotNull String label, @NotNull String[] args) {
     if(sender instanceof Player player) {
-      player.setLevel(30);
+      if(args.length == 1) {
+        player.setLevel(Integer.parseInt(args[0]));
+      } else {
+        player.sendMessage("Nooooooooo!!!");
+      }
     }
     return false;
   }
